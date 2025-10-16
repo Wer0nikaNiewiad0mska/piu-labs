@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 1</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header>
+      <h1>Weronika Niewiadomska</h1>
+    </header>
+    <nav aria-label="Główna nawigacja">
+      <ul>
+        <li><a href="../../index.html">Strona Główna</a></li>
+        <li><a href="login.html">Logowanie</a></li>
+        <li><a href="konkurs.html">Konkurs</a></li>
+        <li><a href="uwagi.html">Uwagi</a></li>
+      </ul>
+    </nav>
+    <main>
+      <article>
+        <header>
+          <h2>Uwagi o formularzach HTML</h2>
+          <p>
+            Formularze to podstawowy sposób zbierania danych w sieci. Działają
+            nawet bez skryptów, są przewidywalne i dostępne. Jednocześnie mają
+            swoje granice, które przy bardziej wymagających scenariuszach
+            potrafią uwierać.
+          </p>
+        </header>
+
+        <section>
+          <h3>Co działa na plus</h3>
+          <ul>
+            <li>Wbudowana walidacja podstawowych typów danych.</li>
+            <li>
+              Przyjazne dla czytników ekranu, jeśli trzymamy się semantyki.
+            </li>
+            <li>Współpraca z autouzupełnianiem i menedżerami haseł.</li>
+            <li>
+              Brak zależności od JavaScriptu, formularz po prostu wysyła dane.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Gdzie widać ograniczenia</h3>
+          <ul>
+            <li>
+              Mało elastyczna walidacja i brak reakcji w czasie rzeczywistym.
+            </li>
+            <li>Pełne przeładowania stron przy błędach i poprawkach.</li>
+            <li>
+              Trudne wdrażanie złożonych interakcji, kreatorów i
+              niestandardowych pól.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Kiedy formularz HTML ma najwięcej sensu</h3>
+          <ul>
+            <li>
+              Proste zgłoszenia: kontakt, zapisy, logowanie, krótkie ankiety.
+            </li>
+            <li>Serwis, w którym liczy się niezawodność i dostępność.</li>
+            <li>
+              Gdy backend przyjmuje klasyczne zapytania i zwraca strony z
+              komunikatami.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Kiedy lepiej dołożyć JS lub sięgnąć po inne rozwiązanie</h3>
+          <ul>
+            <li>
+              Kreatory wieloetapowe i zależne pola wymagające natychmiastowych
+              podpowiedzi.
+            </li>
+            <li>Obsługa dużych plików, podglądy, edytory z formatowaniem.</li>
+            <li>
+              Aplikacje jednosesyjne, gdzie oczekujemy płynnej pracy bez
+              przeładowań.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Dobre praktyki</h3>
+          <ol>
+            <li>
+              Trzymaj się semantyki: nagłówki porządkują treść, etykiety opisują
+              pola, grupy pól mają własny tytuł.
+            </li>
+            <li>
+              Używaj właściwych typów pól, aby przeglądarka mogła pomóc
+              użytkownikowi.
+            </li>
+            <li>Dbaj o czytelne stany skupienia i jasne komunikaty błędów.</li>
+            <li>
+              Waliduj dane zawsze po stronie serwera, klient to tylko pierwsza
+              linia wsparcia.
+            </li>
+            <li>
+              Styluj głównie elementy semantyczne; klasy dodawaj dopiero, gdy
+              naprawdę są potrzebne.
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>Na co zwrócić uwagę przy wdrożeniu</h3>
+          <ul>
+            <li>Spójne nazwy pól i wartości, żeby backend nie miał zagadek.</li>
+            <li>
+              Przejrzyste komunikaty po wysłaniu: sukces, błąd, brak uprawnień.
+            </li>
+            <li>
+              Ochrona przed nadużyciami: limity, filtrowanie danych,
+              zabezpieczenia antyspamowe.
+            </li>
+          </ul>
+        </section>
+
+        <footer>
+          <p>
+            Podsumowując: formularze HTML to solidna podstawa. W prostych
+            przypadkach wystarczą w zupełności. Gdy rosną wymagania, warto
+            dobudować warstwę interakcji i walidacji po stronie klienta, ale z
+            zachowaniem semantycznej bazy.
+          </p>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>
