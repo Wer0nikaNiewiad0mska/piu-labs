@@ -1,19 +1,101 @@
-/* Minimalny reset  */
-html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
-}
-body {
-  margin: 1rem;
-  padding: 0;
+:root {
+  --color-bg: #f2e9e4;
+  --color-text: #000;
+  --color-textbg: rgba(0, 0, 0, 0.059);
+  --color-notused: rgba(0, 0, 0, 0.457);
+  --color-navbg1: #c29fa2;
+  --color-navbg2: #d8a48f;
+  --color-navbg3: #a3a380;
+  --color-navbg4: #d6ce93;
 }
 
-a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
+html {
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
 }
-a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+
+body {
+  background: var(--color-bg);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    z-index: 100;
+  }
+  nav {
+    ul {
+      position: relative;
+      &:hover a {
+        color: var(--color-notused);
+      }
+      li {
+        list-style: none;
+        text-align: center;
+        &:hover a {
+          color: var(--color-text);
+        }
+        a {
+          color: var(--color-text);
+          text-decoration: none;
+          font-size: 3em;
+          padding: 5px 20px;
+          display: inline-flex;
+          font-weight: 700;
+          transition: 0.5s;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5em;
+            color: var(--color-textbg);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 500px;
+            transition: letter-spacing 0.5s, left 0.5s;
+          }
+          &:hover:before {
+            content: attr(data-text);
+            opacity: 1;
+            left: 50%;
+            letter-spacing: 10px;
+            width: 1800px;
+            height: 1800px;
+          }
+        }
+        &:nth-child(6n + 1) a:before {
+          background: var(--color-navbg1);
+        }
+        &:nth-child(6n + 2) a:before {
+          background: var(--color-navbg2);
+        }
+        &:nth-child(6n + 3) a:before {
+          background: var(--color-navbg3);
+        }
+        &:nth-child(6n + 4) a:before {
+          background: var(--color-navbg4);
+        }
+      }
+    }
+  }
 }
