@@ -3,30 +3,32 @@
   --color-red: #d7282f;
   --color-green: #388e3c;
   --color-yellow: #ffc107;
-
   --color-white: #ffffff;
   --color-black: #000000;
   --color-bg: #f0f0f0;
   --color-text-main: #1f2a37;
   --color-text-muted: #4b5563;
   --color-border-soft: #d9d9d9;
-
   --font-family-base: 'Segoe UI', Arial, sans-serif;
   --fs-title: 26px;
   --fs-body: 15px;
   --fs-price: 26px;
   --fs-button: 16px;
-
   --max-image-width: 500px;
   --details-width: 300px;
   --spacing: 16px;
   --wide-card-width: calc(
     var(--max-image-width) + var(--details-width) + 3 * var(--spacing)
   );
-
   --options-inline-margin: 40px;
+  --color-rainbow-1: #ff0059;
+  --color-rainbow-2: #ff6a00;
+  --color-rainbow-3: #ffd500;
+  --color-rainbow-4: #39ff14;
+  --color-rainbow-5: #00d5ff;
+  --color-rainbow-6: #6a00ff;
+  --color-rainbow-7: #ff00f5;
 }
-
 #color-select-blue:checked ~ .product-card__content {
   --polo-image-url: url('../pictures/polo_b.png');
   --polo-border: var(--color-blue);
@@ -51,7 +53,6 @@
   --polo-badge-bg: var(--color-yellow);
   --polo-btn-bg: var(--color-yellow);
 }
-
 #color-select-blue:checked ~ .product-card__content .color-option--blue,
 #color-select-red:checked ~ .product-card__content .color-option--red,
 #color-select-green:checked ~ .product-card__content .color-option--green,
@@ -59,7 +60,6 @@
   box-shadow: 0 0 0 3px var(--color-white), 0 0 0 5px var(--color-black);
   border-color: var(--color-black);
 }
-
 body {
   font-family: var(--font-family-base);
   background-color: var(--color-bg);
@@ -71,7 +71,6 @@ body {
   min-height: 100vh;
   color: var(--color-text-main);
 }
-
 .product-card {
   background: var(--color-bg);
   border: 1px solid var(--color-border-soft);
@@ -81,7 +80,6 @@ body {
   max-width: min(100vw - 2 * var(--spacing), var(--wide-card-width));
   box-sizing: border-box;
 }
-
 .product-card__content {
   --polo-image-url: url('../pictures/polo_g.png');
   display: flex;
@@ -92,7 +90,6 @@ body {
   margin: 0 auto;
   max-width: min(100%, var(--wide-card-width));
 }
-
 .product-card__image-container {
   max-width: var(--max-image-width);
   flex: 1 1 360px;
@@ -109,7 +106,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
-
 .product-card__details {
   width: min(100%, var(--details-width));
   flex: 1 1 300px;
@@ -121,7 +117,6 @@ body {
   padding: 16px 24px;
   margin-bottom: -8px;
 }
-
 .product-card__header {
   display: flex;
   align-items: center;
@@ -130,7 +125,6 @@ body {
 }
 .product-card__title {
   font-size: var(--fs-title);
-  font-weight: bold;
   font-weight: 600;
   margin: 0;
 }
@@ -143,14 +137,12 @@ body {
   font-weight: 700;
   white-space: nowrap;
 }
-
 .product-card__description {
   font-size: var(--fs-body);
   color: var(--color-text-muted);
   margin: 8px 0 12px 0;
   line-height: 1.5;
 }
-
 .product-card__option-group {
   margin: 10px 0;
 }
@@ -162,7 +154,6 @@ body {
   margin-left: var(--options-inline-margin);
   margin-right: var(--options-inline-margin);
 }
-
 .product-card__color-options {
   display: flex;
   gap: 14px;
@@ -189,7 +180,6 @@ body {
 .color-option--yellow {
   background-color: var(--color-yellow);
 }
-
 .product-card__size-options {
   display: flex;
   gap: 12px;
@@ -215,20 +205,39 @@ body {
   font-size: 16px;
   background: var(--color-white);
   color: var(--color-text-main);
+  transition: all 0.3s ease-in-out;
 }
 .product-card__size-options input:checked + .size-option {
   background: var(--polo-btn-bg);
   border: 2px solid var(--color-black);
   color: var(--color-white);
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: 0 0 20px var(--polo-btn-bg), 0 0 40px var(--polo-btn-bg);
+  transition: all 0.25s ease-in-out;
 }
-
+@keyframes pop {
+  0% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 0px var(--polo-btn-bg);
+  }
+  40% {
+    transform: scale(1.3) rotate(5deg);
+    box-shadow: 0 0 25px var(--polo-btn-bg);
+  }
+  100% {
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow: 0 0 10px var(--polo-btn-bg);
+  }
+}
+.product-card__size-options input:checked + .size-option {
+  animation: pop 0.4s ease forwards;
+}
 .product-card__price {
   font-size: var(--fs-price);
   font-weight: 700;
   margin: 3px 0 8px 0;
   text-align: center;
 }
-
 .product-card__button {
   align-self: center;
   background-color: var(--polo-btn-bg);
@@ -242,6 +251,105 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   min-width: 180px;
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+  will-change: transform, filter, box-shadow;
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.1, 1.4);
+  animation: btn-rainbow 2s linear infinite;
+  outline: none;
+}
+.product-card__button:focus {
+  animation: click-flash 1s ease forwards;
+}
+.product-card__button::before,
+.product-card__button::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  opacity: 0;
+}
+.product-card__button:focus::before {
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 0, 0, 0) 70%
+  );
+  animation: flash 0.8s ease forwards;
+}
+.product-card__button:focus::after {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 var(--color-rainbow-1),
+    18px -6px 0 0 var(--color-rainbow-2), -16px -10px 0 0 var(--color-rainbow-3),
+    22px 8px 0 0 var(--color-rainbow-4), -22px 12px 0 0 var(--color-rainbow-5),
+    10px 18px 0 0 var(--color-rainbow-6), -8px 22px 0 0 var(--color-rainbow-7),
+    0 -22px 0 0 var(--color-rainbow-1);
+  animation: burst 0.7s cubic-bezier(0.2, 0.9, 0.1, 1.2) forwards;
+}
+@keyframes click-flash {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--polo-btn-bg);
+  }
+  25% {
+    transform: scale(1.2) rotate(5deg);
+    box-shadow: 0 0 40px 10px var(--polo-btn-bg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-4deg);
+    box-shadow: 0 0 60px 18px var(--polo-btn-bg);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--polo-btn-bg);
+  }
+}
+@keyframes flash {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.6) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.2) rotate(360deg);
+    opacity: 0;
+  }
+}
+@keyframes btn-rainbow {
+  0% {
+    box-shadow: 0 0 0 0 var(--polo-btn-bg), 0 8px 22px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px 10px var(--polo-btn-bg), 0 10px 26px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--polo-btn-bg), 0 8px 22px rgba(0, 0, 0, 0.15);
+  }
 }
