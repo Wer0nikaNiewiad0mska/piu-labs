@@ -2,11 +2,125 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab 3</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/polo.css" />
   </head>
   <body>
-    <h1>Lab 3</h1>
-    <a href="..">Powrót</a>
+    <div class="product-card">
+      <input
+        type="radio"
+        id="color-select-blue"
+        name="color-state"
+        value="blue"
+        hidden
+      />
+      <input
+        type="radio"
+        id="color-select-red"
+        name="color-state"
+        value="red"
+        hidden
+      />
+      <input
+        type="radio"
+        id="color-select-green"
+        name="color-state"
+        value="green"
+        checked
+        hidden
+      />
+      <input
+        type="radio"
+        id="color-select-yellow"
+        name="color-state"
+        value="yellow"
+        hidden
+      />
+      <div class="product-card__content">
+        <div class="product-card__image-container">
+          <div
+            class="product-card__image"
+            role="img"
+            aria-label="Koszulka Polo"
+          ></div>
+        </div>
+        <div class="product-card__details">
+          <div class="product-card__header">
+            <h1 class="product-card__title">Koszulka Polo</h1>
+            <span class="product-card__promo">Promocja!</span>
+          </div>
+          <p class="product-card__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+            quis adipisci maiores.
+          </p>
+          <div class="product-card__option-group">
+            <span class="product-card__option-label">Kolor</span>
+            <div class="product-card__color-options">
+              <label
+                for="color-select-blue"
+                class="color-option color-option--blue"
+                title="Niebieski"
+              ></label>
+              <label
+                for="color-select-red"
+                class="color-option color-option--red"
+                title="Czerwony"
+              ></label>
+              <label
+                for="color-select-green"
+                class="color-option color-option--green"
+                title="Zielony"
+              ></label>
+              <label
+                for="color-select-yellow"
+                class="color-option color-option--yellow"
+                title="Żółty"
+              ></label>
+            </div>
+          </div>
+          <div class="product-card__option-group">
+            <span class="product-card__option-label">Rozmiar</span>
+            <div class="product-card__size-options">
+              <input
+                type="radio"
+                id="size-s"
+                name="size-select"
+                value="s"
+                hidden
+              />
+              <label for="size-s" class="size-option">S</label>
+              <input
+                type="radio"
+                id="size-m"
+                name="size-select"
+                value="m"
+                checked
+                hidden
+              />
+              <label for="size-m" class="size-option">M</label>
+              <input
+                type="radio"
+                id="size-l"
+                name="size-select"
+                value="l"
+                hidden
+              />
+              <label for="size-l" class="size-option">L</label>
+              <input
+                type="radio"
+                id="size-xl"
+                name="size-select"
+                value="xl"
+                hidden
+              />
+              <label for="size-xl" class="size-option">XL</label>
+            </div>
+          </div>
+          <div class="product-card__price">59,99 zł</div>
+          <button class="product-card__button">🛒 Do koszyka</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

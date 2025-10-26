@@ -1,0 +1,247 @@
+:root {
+  --color-blue: #1e64c8;
+  --color-red: #d7282f;
+  --color-green: #388e3c;
+  --color-yellow: #ffc107;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-bg: #f0f0f0;
+  --color-text-main: #1f2a37;
+  --color-text-muted: #4b5563;
+  --color-border-soft: #d9d9d9;
+
+  --font-family-base: 'Segoe UI', Arial, sans-serif;
+  --fs-title: 26px;
+  --fs-body: 15px;
+  --fs-price: 26px;
+  --fs-button: 16px;
+
+  --max-image-width: 500px;
+  --details-width: 300px;
+  --spacing: 16px;
+  --wide-card-width: calc(
+    var(--max-image-width) + var(--details-width) + 3 * var(--spacing)
+  );
+
+  --options-inline-margin: 40px;
+}
+
+#color-select-blue:checked ~ .product-card__content {
+  --polo-image-url: url('../pictures/polo_b.png');
+  --polo-border: var(--color-blue);
+  --polo-badge-bg: var(--color-blue);
+  --polo-btn-bg: var(--color-blue);
+}
+#color-select-red:checked ~ .product-card__content {
+  --polo-image-url: url('../pictures/polo_r.png');
+  --polo-border: var(--color-red);
+  --polo-badge-bg: var(--color-red);
+  --polo-btn-bg: var(--color-red);
+}
+#color-select-green:checked ~ .product-card__content {
+  --polo-image-url: url('../pictures/polo_g.png');
+  --polo-border: var(--color-green);
+  --polo-badge-bg: var(--color-green);
+  --polo-btn-bg: var(--color-green);
+}
+#color-select-yellow:checked ~ .product-card__content {
+  --polo-image-url: url('../pictures/polo_y.png');
+  --polo-border: var(--color-yellow);
+  --polo-badge-bg: var(--color-yellow);
+  --polo-btn-bg: var(--color-yellow);
+}
+
+#color-select-blue:checked ~ .product-card__content .color-option--blue,
+#color-select-red:checked ~ .product-card__content .color-option--red,
+#color-select-green:checked ~ .product-card__content .color-option--green,
+#color-select-yellow:checked ~ .product-card__content .color-option--yellow {
+  box-shadow: 0 0 0 3px var(--color-white), 0 0 0 5px var(--color-black);
+  border-color: var(--color-black);
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg);
+  margin: 0;
+  padding: var(--spacing);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: var(--color-text-main);
+}
+
+.product-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-soft);
+  border-radius: 8px;
+  padding: calc(var(--spacing) * 1.25);
+  width: 100%;
+  max-width: min(100vw - 2 * var(--spacing), var(--wide-card-width));
+  box-sizing: border-box;
+}
+
+.product-card__content {
+  --polo-image-url: url('../pictures/polo_g.png');
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 1.25);
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  max-width: min(100%, var(--wide-card-width));
+}
+
+.product-card__image-container {
+  max-width: var(--max-image-width);
+  flex: 1 1 360px;
+  border: 2px solid var(--polo-border);
+  border-radius: 10px;
+  background: var(--color-white);
+  box-sizing: border-box;
+}
+.product-card__image {
+  width: 100%;
+  padding-top: 100%;
+  background-image: var(--polo-image-url);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.product-card__details {
+  width: min(100%, var(--details-width));
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--color-bg);
+  border-radius: 10px;
+  padding: 16px 24px;
+  margin-bottom: -8px;
+}
+
+.product-card__header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 8px;
+}
+.product-card__title {
+  font-size: var(--fs-title);
+  font-weight: bold;
+  font-weight: 600;
+  margin: 0;
+}
+.product-card__promo {
+  background-color: var(--polo-badge-bg);
+  color: var(--color-white);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.product-card__description {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  margin: 8px 0 12px 0;
+  line-height: 1.5;
+}
+
+.product-card__option-group {
+  margin: 10px 0;
+}
+.product-card__option-label {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 10px;
+  font-size: 15px;
+  margin-left: var(--options-inline-margin);
+  margin-right: var(--options-inline-margin);
+}
+
+.product-card__color-options {
+  display: flex;
+  gap: 14px;
+  margin-left: var(--options-inline-margin);
+  margin-right: var(--options-inline-margin);
+}
+.color-option {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--color-black);
+  cursor: pointer;
+  display: block;
+}
+.color-option--blue {
+  background-color: var(--color-blue);
+}
+.color-option--red {
+  background-color: var(--color-red);
+}
+.color-option--green {
+  background-color: var(--color-green);
+}
+.color-option--yellow {
+  background-color: var(--color-yellow);
+}
+
+.product-card__size-options {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  margin-left: var(--options-inline-margin);
+  margin-right: var(--options-inline-margin);
+}
+.product-card__size-options input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.size-option {
+  width: 52px;
+  height: 46px;
+  border: 2px solid var(--color-black);
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  background: var(--color-white);
+  color: var(--color-text-main);
+}
+.product-card__size-options input:checked + .size-option {
+  background: var(--polo-btn-bg);
+  border: 2px solid var(--color-black);
+  color: var(--color-white);
+}
+
+.product-card__price {
+  font-size: var(--fs-price);
+  font-weight: 700;
+  margin: 3px 0 8px 0;
+  text-align: center;
+}
+
+.product-card__button {
+  align-self: center;
+  background-color: var(--polo-btn-bg);
+  color: var(--color-white);
+  padding: 10px 18px;
+  border: 2px solid var(--color-black);
+  border-radius: 10px;
+  font-size: var(--fs-button);
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 180px;
+}
