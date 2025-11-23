@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab-5</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="layout">
+      <header class="topbar">
+        <div class="brand">
+          <div>
+            <h1>Kształty</h1>
+          </div>
+        </div>
+
+        <div class="badges" aria-label="liczniki">
+          <span class="badge badge-sq"
+            >Kwadraty: <strong id="cntSquares">0</strong></span
+          >
+          <span class="badge badge-ci"
+            >Kółka: <strong id="cntCircles">0</strong></span
+          >
+        </div>
+      </header>
+
+      <aside class="panel" aria-label="kontrolki">
+        <h2>Sterowanie</h2>
+        <button id="addSquare">Dodaj kwadrat</button>
+        <button id="addCircle">Dodaj kółko</button>
+        <div class="divider"></div>
+        <button id="recolorSquares">Przekoloruj kwadraty</button>
+        <button id="recolorCircles">Przekoloruj kółka</button>
+      </aside>
+
+      <main class="stage">
+        <div class="stage-head">
+          <h3>Pole robocze</h3>
+          <span class="stage-sub">Kliknij kształt aby usunąć</span>
+        </div>
+
+        <div id="board" class="board" aria-label="pole z kształtami"></div>
+      </main>
+    </div>
+  </body>
+</html>
