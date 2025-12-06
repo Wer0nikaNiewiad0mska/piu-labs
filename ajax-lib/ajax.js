@@ -3,9 +3,7 @@ export class Ajax {
         const defaultOptions = {
             baseURL: '',
             timeout: 5000,
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: {},
             fetchOptions: {},
         };
         this.options = {
@@ -43,11 +41,7 @@ export class Ajax {
 
         if (!baseURL) return url;
 
-        const slash = baseURL.endsWith('/') || url.startsWith('/') ? '' : '/';
-        return `${baseURL.replace(/\/+$/, '')}${slash}${url.replace(
-            /^\/+/,
-            ''
-        )}`;
+        return `${baseURL.replace(/\/+$/, '')}/${url.replace(/^\/+/, '')}`;
     }
 
     _mergeOptions(localOptions = {}) {
@@ -79,15 +73,26 @@ export class Ajax {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), timeout);
 
+        const finalHeaders = { ...headers };
+
         const options = {
             method,
             signal: controller.signal,
             ...fetchOptions,
-            headers,
+            headers: finalHeaders,
         };
 
         if (data !== undefined) {
             options.body = JSON.stringify(data);
+            if (
+                !('Content-Type' in finalHeaders) &&
+                !('content-type' in finalHeaders)
+            ) {
+                finalHeaders['Content-Type'] = 'application/json';
+            }
+        } else {
+            delete finalHeaders['Content-Type'];
+            delete finalHeaders['content-type'];
         }
 
         try {
