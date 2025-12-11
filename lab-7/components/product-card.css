@@ -1,0 +1,195 @@
+:host {
+  display: block;
+
+  --pc-color-surface: #ffffff;
+  --pc-color-text-main: #0f172a;
+  --pc-color-text-strong: #111827;
+  --pc-color-text-muted: #4b5563;
+  --pc-color-text-subtle: #9ca3af;
+  --pc-color-text-on-dark: #f9fafb;
+
+  --pc-color-border: #e5e7eb;
+  --pc-color-surface-subtle: #f9fafb;
+
+  --pc-color-badge-start: #f97316;
+  --pc-color-badge-end: #fb923c;
+  --pc-color-focus-ring: #fed7aa;
+
+  --pc-color-button-dark: #111827;
+  --pc-color-button-darker: #020617;
+
+  --pc-shadow-color-soft: rgba(15, 23, 42, 0.14);
+  --pc-shadow-color-strong: rgba(15, 23, 42, 0.22);
+  --pc-shadow-color-button: rgba(15, 23, 42, 0.35);
+  --pc-shadow-color-button-active: rgba(15, 23, 42, 0.3);
+}
+
+.product-card {
+  width: 260px;
+  height: 480px;
+  background: var(--pc-color-surface);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px var(--pc-shadow-color-soft);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px var(--pc-shadow-color-strong);
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: linear-gradient(
+    135deg,
+    var(--pc-color-badge-start),
+    var(--pc-color-badge-end)
+  );
+  color: var(--pc-color-surface);
+  font-weight: 600;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+.meta-row[hidden],
+.badge[hidden] {
+  display: none;
+}
+
+.image-wrapper {
+  flex: 0 0 55%;
+  padding: 14px 14px 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper ::slotted(img) {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 16px 14px;
+  gap: 6px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--pc-color-text-main);
+}
+
+.price {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--pc-color-text-strong);
+}
+
+.meta-row {
+  display: flex;
+  gap: 6px;
+  font-size: 0.8rem;
+  align-items: center;
+  color: var(--pc-color-text-muted);
+}
+
+.meta-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pc-color-text-subtle);
+  flex-shrink: 0;
+  width: 56px;
+}
+
+.meta-value {
+  flex: 1;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid var(--pc-color-border);
+  padding: 6px 28px 6px 10px;
+  font-size: 0.8rem;
+  background-color: var(--pc-color-surface-subtle);
+  color: var(--pc-color-text-strong);
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.select-wrapper::after {
+  content: '▾';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: var(--pc-color-text-subtle);
+  pointer-events: none;
+}
+
+.select:focus,
+.select:active {
+  outline: none;
+}
+
+.select:focus-visible {
+  outline: none;
+  border-color: var(--pc-color-badge-start);
+  box-shadow: 0 0 0 2px var(--pc-color-focus-ring);
+}
+
+.add-to-cart {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--pc-color-button-dark);
+  color: var(--pc-color-text-on-dark);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 12px var(--pc-shadow-color-button);
+}
+
+.add-to-cart:hover {
+  background: var(--pc-color-button-darker);
+  transform: translateY(-1px);
+}
+
+.add-to-cart:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px var(--pc-shadow-color-button-active);
+}
+
+.add-to-cart:focus-visible {
+  outline: 2px solid var(--pc-color-badge-start);
+  outline-offset: 2px;
+}

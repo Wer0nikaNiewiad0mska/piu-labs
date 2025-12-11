@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="components/product-card.css" />
+
+<article class="product-card">
+  <div class="badge" hidden>
+    <slot name="promo"></slot>
+  </div>
+
+  <div class="image-wrapper">
+    <slot name="image"></slot>
+  </div>
+
+  <div class="content">
+    <h3 class="title">
+      <slot name="name"></slot>
+    </h3>
+
+    <p class="price">
+      <slot name="price"></slot>
+    </p>
+
+    <div class="meta-row meta-row--colors" hidden>
+      <span class="meta-label">Kolor</span>
+      <div class="meta-value select-wrapper">
+        <select class="select select--colors">
+          <option value="" disabled selected hidden data-placeholder>
+            Wybierz kolor
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="meta-row meta-row--sizes" hidden>
+      <span class="meta-label">Rozmiar</span>
+      <div class="meta-value select-wrapper">
+        <select class="select select--sizes">
+          <option value="" disabled selected hidden data-placeholder>
+            Wybierz rozmiar
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div hidden>
+      <slot name="colors"></slot>
+      <slot name="sizes"></slot>
+    </div>
+
+    <button class="add-to-cart" type="button">Do koszyka</button>
+  </div>
+</article>

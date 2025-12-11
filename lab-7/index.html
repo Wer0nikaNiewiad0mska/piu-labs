@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab-7</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>Sklep z odzieżą</h1>
+        <p>Przykładowe produkty wyświetlane jako własny komponent</p>
+      </header>
+
+      <section class="product-grid">
+        <product-card>
+          <img slot="image" src="./img/dress.png" alt="Letnia sukienka" />
+          <span slot="name">Letnia sukienka</span>
+          <span slot="price">129,00 zł</span>
+
+          <option slot="colors" value="waniliowy">Waniliowy</option>
+          <option slot="colors" value="blekitny">Błękitny</option>
+
+          <option slot="sizes" value="xs">XS</option>
+          <option slot="sizes" value="s">S</option>
+          <option slot="sizes" value="m">M</option>
+          <option slot="sizes" value="l">L</option>
+
+          <span slot="promo">-20%</span>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="./img/hoodie.png" alt="Bluza z kapturem" />
+          <span slot="name">Bluza z kapturem Basic</span>
+          <span slot="price">169,00 zł</span>
+
+          <option slot="sizes" value="s">S</option>
+          <option slot="sizes" value="m">M</option>
+          <option slot="sizes" value="l">L</option>
+          <option slot="sizes" value="xl">XL</option>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="./img/jacket.png" alt="Kurtka" />
+          <span slot="name">Kurtka Classic</span>
+          <span slot="price">219,00 zł</span>
+
+          <option slot="colors" value="yellow">Żółta</option>
+          <option slot="colors" value="black">Czarna</option>
+
+          <span slot="promo">Nowość</span>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="./img/jeans.png" alt="Jeansy fit" />
+          <span slot="name">Jeansy Fit</span>
+          <span slot="price">199,00 zł</span>
+
+          <option slot="sizes" value="28">28</option>
+          <option slot="sizes" value="30">30</option>
+          <option slot="sizes" value="32">32</option>
+          <option slot="sizes" value="34">34</option>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="./img/sneakers.png" alt="Białe sneakersy" />
+          <span slot="name">Białe sneakersy Street</span>
+          <span slot="price">249,00 zł</span>
+
+          <option slot="colors" value="bialy">Biały</option>
+
+          <span slot="promo">Bestseller</span>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="./img/tshirt.png" alt="T-shirt" />
+          <span slot="name">T-shirt</span>
+          <span slot="price">59,00 zł</span>
+        </product-card>
+      </section>
+    </main>
+  </body>
+</html>
