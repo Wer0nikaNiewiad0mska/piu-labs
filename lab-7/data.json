@@ -1,0 +1,68 @@
+[
+  {
+    "id": "dress",
+    "name": "Letnia sukienka",
+    "price": 129.0,
+    "image": "./img/dress.png",
+    "promo": "-20%",
+    "colors": [
+      { "value": "waniliowy", "label": "Waniliowy" },
+      { "value": "blekitny", "label": "Błękitny" }
+    ],
+    "sizes": [
+      { "value": "xs", "label": "XS" },
+      { "value": "s", "label": "S" },
+      { "value": "m", "label": "M" },
+      { "value": "l", "label": "L" }
+    ]
+  },
+  {
+    "id": "hoodie",
+    "name": "Bluza z kapturem Basic",
+    "price": 169.0,
+    "image": "./img/hoodie.png",
+    "sizes": [
+      { "value": "s", "label": "S" },
+      { "value": "m", "label": "M" },
+      { "value": "l", "label": "L" },
+      { "value": "xl", "label": "XL" }
+    ]
+  },
+  {
+    "id": "jacket",
+    "name": "Kurtka Classic",
+    "price": 219.0,
+    "image": "./img/jacket.png",
+    "promo": "Nowość",
+    "colors": [
+      { "value": "yellow", "label": "Żółta" },
+      { "value": "black", "label": "Czarna" }
+    ]
+  },
+  {
+    "id": "jeans",
+    "name": "Jeansy Fit",
+    "price": 199.0,
+    "image": "./img/jeans.png",
+    "sizes": [
+      { "value": "28", "label": "28" },
+      { "value": "30", "label": "30" },
+      { "value": "32", "label": "32" },
+      { "value": "34", "label": "34" }
+    ]
+  },
+  {
+    "id": "sneakers",
+    "name": "Białe sneakersy Street",
+    "price": 249.0,
+    "image": "./img/sneakers.png",
+    "promo": "Bestseller",
+    "colors": [{ "value": "bialy", "label": "Biały" }]
+  },
+  {
+    "id": "tshirt",
+    "name": "T-shirt",
+    "price": 59.0,
+    "image": "./img/tshirt.png"
+  }
+]

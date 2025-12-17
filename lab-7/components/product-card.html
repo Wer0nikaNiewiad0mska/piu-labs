@@ -1,22 +1,16 @@
-<link rel="stylesheet" href="components/product-card.css" />
+<link rel="stylesheet" href="./components/product-card.css" />
 
 <article class="product-card">
-  <div class="badge" hidden>
-    <slot name="promo"></slot>
-  </div>
+  <div class="badge" hidden></div>
 
   <div class="image-wrapper">
-    <slot name="image"></slot>
+    <img class="image" alt="" />
   </div>
 
   <div class="content">
-    <h3 class="title">
-      <slot name="name"></slot>
-    </h3>
+    <h3 class="title"></h3>
 
-    <p class="price">
-      <slot name="price"></slot>
-    </p>
+    <p class="price"></p>
 
     <div class="meta-row meta-row--colors" hidden>
       <span class="meta-label">Kolor</span>
@@ -38,11 +32,6 @@
           </option>
         </select>
       </div>
-    </div>
-
-    <div hidden>
-      <slot name="colors"></slot>
-      <slot name="sizes"></slot>
     </div>
 
     <button class="add-to-cart" type="button">Do koszyka</button>
