@@ -82,7 +82,16 @@ template.innerHTML = `
       display: grid;
       gap: 10px;
       background: #fff;
-      max-height: 70px;
+    }
+    .meta[hidden] { display: none; }
+
+    .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 0.85rem;
+        color: #6b7280;
+        line-height: 1.2;
     }
 
     .row {
@@ -110,7 +119,6 @@ template.innerHTML = `
     .actions {
       display: flex;
       justify-content: flex-end;
-      margin-top: 6px;
     }
 
     button {

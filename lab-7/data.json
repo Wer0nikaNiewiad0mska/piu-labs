@@ -7,7 +7,7 @@
     "promo": "-20%",
     "colors": [
       { "value": "waniliowy", "label": "Waniliowy" },
-      { "value": "blekitny", "label": "Błękitny" }
+      { "value": "błękitny", "label": "Błękitny" }
     ],
     "sizes": [
       { "value": "xs", "label": "XS" },
@@ -35,8 +35,8 @@
     "image": "./img/jacket.png",
     "promo": "Nowość",
     "colors": [
-      { "value": "yellow", "label": "Żółta" },
-      { "value": "black", "label": "Czarna" }
+      { "value": "żółta", "label": "Żółta" },
+      { "value": "czarna", "label": "Czarna" }
     ]
   },
   {
@@ -57,7 +57,7 @@
     "price": 249.0,
     "image": "./img/sneakers.png",
     "promo": "Bestseller",
-    "colors": [{ "value": "bialy", "label": "Biały" }]
+    "colors": [{ "value": "biały", "label": "Biały" }]
   },
   {
     "id": "tshirt",
